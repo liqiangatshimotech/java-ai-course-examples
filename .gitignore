@@ -1,0 +1,27 @@
+# Build outputs
+target/
+out/
+build/
+
+# IDE and local workspace files
+.idea/
+.vscode/
+*.iml
+.run/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Runtime logs and generated local artifacts
+*.log
+.playwright-cli/
+output/
+
+# Environment and local secret files
+.env
+.env.*
+application-local.yml
+application-local.yaml

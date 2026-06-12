@@ -1,0 +1,29 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: langchain4j-chat-demo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  ai:
+    default-provider: ${APP_AI_DEFAULT_PROVIDER:ollama}
+    log-requests: ${APP_AI_LOG_REQUESTS:false}
+    log-responses: ${APP_AI_LOG_RESPONSES:false}
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      model: ${OLLAMA_MODEL:qwen2.5:7b}
+      temperature: ${OLLAMA_TEMPERATURE:0.2}
+      timeout: ${OLLAMA_TIMEOUT:60s}
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      base-url: ${OPENAI_BASE_URL:https://api.openai.com/v1}
+      model: ${OPENAI_MODEL:gpt-4.1-mini}
+      temperature: ${OPENAI_TEMPERATURE:0.2}
+      timeout: ${OPENAI_TIMEOUT:60s}

@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+spring:
+  ai:
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      chat:
+        options:
+          model: ${OLLAMA_MODEL:qwen2.5:7b}
+          temperature: 0.0
+
+app:
+  ticket-copilot:
+    max-attempts: ${TICKET_COPILOT_MAX_ATTEMPTS:2}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  level:
+    com.example.supportticketcopilot: INFO

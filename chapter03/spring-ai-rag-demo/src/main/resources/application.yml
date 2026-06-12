@@ -1,0 +1,25 @@
+server:
+  port: 8084
+
+spring:
+  ai:
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      chat:
+        options:
+          model: ${OLLAMA_MODEL:qwen2.5:7b}
+          temperature: 0.0
+
+app:
+  rag:
+    ai-mode: ${RAG_AI_MODE:fake}
+    default-tenant-id: ${RAG_TENANT_ID:acme}
+    top-k: ${RAG_TOP_K:4}
+    similarity-threshold: ${RAG_SIMILARITY_THRESHOLD:0.08}
+    max-chunk-chars: ${RAG_MAX_CHUNK_CHARS:650}
+    chunk-overlap-chars: ${RAG_CHUNK_OVERLAP_CHARS:80}
+    embedding-dimensions: ${RAG_EMBEDDING_DIMENSIONS:384}
+
+logging:
+  level:
+    com.example.springairag: INFO
