@@ -19,5 +19,7 @@
 
     <modules>
         <module>claude-code-openclaw-demo</module>
+        <module>mimo-code-memory-demo</module>
+        <module>mimo-code-infinite-context-demo</module>
     </modules>
 </project>

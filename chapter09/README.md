@@ -3,6 +3,8 @@
 This chapter contains Java examples for:
 
 - `claude-code-openclaw-demo`: scans the reconstructed Claude Code source tree, shows how a multi-entry Gateway can normalize requests into one Agent session, demonstrates a file-based Agent memory workflow with `MEMORY.md` plus topic files, and models Hermes Agent's entry-point, tool, skill, memory, and session architecture.
+- `mimo-code-memory-demo`: models MiMo-Code style long-term memory in Java, including raw history, Markdown memory files, full-text recall, checkpoint writing, Dream/Distill consolidation, task progress, actor registry, workflow journal, and write-scope guards.
+- `mimo-code-infinite-context-demo`: models MiMo-Code style "infinite context" in Java, including bounded context windows, checkpoint threshold firing, rebuild-context assembly, recent-tail preservation, and micro-compaction of repeatable tool results.
 
 Default model profile follows the rest of the course:
 
@@ -15,4 +17,16 @@ Run from the chapter module:
 
 ```bash
 mvn -q -f chapter09/claude-code-openclaw-demo/pom.xml compile exec:java
+```
+
+Run the MiMo-Code memory demo:
+
+```bash
+mvn -q -f chapter09/mimo-code-memory-demo/pom.xml compile exec:java
+```
+
+Run the MiMo-Code infinite context demo:
+
+```bash
+mvn -q -f chapter09/mimo-code-infinite-context-demo/pom.xml compile exec:java
 ```
